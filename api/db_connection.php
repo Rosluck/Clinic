@@ -3,7 +3,7 @@ class Operations{
 	private $db_host = 'localhost';
 	private $db_name = 'Bioclinic';
 	private $db_username ='root';
-	private $db_password = '';
+	private $db_password = 'Bioclinic2022';
 
 		public function dbConnection()
 		{
