@@ -1,0 +1,117 @@
+
+<IfModule mod_headers.c> 
+  # Set allow Access-Control-Allow-Origin header 
+  Header set Access-Control- Allow -Origin "*"
+  
+  # Quitar el encabezado X-Powerered-By 
+  Encabezado desarmado X-Powered-By
+   Encabezado siempre desarmado X-Powered-By
+ </IfModule>
+
+<IfModule mod_rewrite.c> 
+  RewriteEngine  activado
+  
+  # Redirección de solicitudes a index.html 
+  RewriteCond  %{DOCUMENT_ROOT} %{REQUEST_URI} -f [OR] 
+  RewriteCond  %{DOCUMENT_ROOT} %{REQUEST_URI} -d
+   RewriteRule ^.*$ - [NC,L] 
+  # Redirigir todo lo que no sea de archivo rutas a index.html 
+  RewriteRule ^(?!.*\.).*$ /index.html [NC,L] 
+</IfModule>
+
+<IfModule mod_mime.c>
+  
+  ### INICIO Extraer de ASC 
+  # Servir recursos con los tipos de medios adecuados (fka tipos MIME).
+  
+  # Intercambio de datos
+  
+  Aplicación AddType /atom+xml atom
+   Aplicación AddType /json json map topojson
+   Aplicación AddType /ld+json jsonld
+   Aplicación AddType /rss+xml rss
+   Aplicación AddType /geo+json geojson
+   Aplicación AddType /rdf+xml rdf
+   Aplicación AddType /xml xml
+  
+  #JavaScript
+
+  
+  AddType texto/javascript js mjs
+  
+  
+  # Archivos de manifiesto
+  
+  Aplicación AddType /manifest+json webmanifest
+   Aplicación AddType /x-web-app-manifest+json webapp
+   AddType text/cache-manifest appcache
+  
+  
+  # archivos multimedia
+  
+  Audio AddType /mp4 f4a f4b m4a
+   Audio AddType /ogg oga ogg opus
+   Imagen AddType /avif avif
+   Imagen AddType /avif-secuencia avifs
+   Imagen AddType /bmp bmp
+   Imagen AddType /jxl jxl
+   Imagen AddType /svg+xml svg svgz
+   Imagen AddType /webp webp
+   AddType video/mp4 f4v f4p m4v mp4
+   AddTypevideo/ogg ogv
+   AddType video/webm webm
+   AddType video/x-flv flv
+  
+
+  AddType imagen/x-icon cur ico
+  
+  
+  # Ensamblaje web
+  
+  Aplicación AddType /wasm wasm
+  
+  
+  # fuentes web
+  
+  Fuente AddType /woff woff
+   Fuente AddType /woff2 woff2
+   Aplicación AddType /vnd.ms-fontobject eot
+   Fuente AddType /ttf ttf
+   Fuente AddType /colección ttc
+   Fuente AddType /otf otf
+  
+  
+  # Otro
+  
+  Aplicación AddType /octet-stream safariextz
+   Aplicación AddType /x-bb-appworld bbaw
+   Aplicación AddType /x-chrome-extension
+   crx Aplicación AddType /x-opera-extension oex
+   Aplicación AddType /x-xpinstall xpi
+   Texto AddType /calendar
+   ics Texto AddType /markdown markdown md
+   AddType texto/vcard vcard vcf
+   AddType texto/vnd.rim.ubicación.xloc xloc
+   AddTypetexto/vtt vtt
+   AddType texto/componente x htc
+  
+  ### FIN Extracto de ASC 
+</IfModule>
+
+# Deshabilite el almacenamiento en caché del navegador para todos los archivos que no obtienen una cadena hash por Angular. 
+<FilesMatch "^(?!.*\.([0-9a-z]{20})\.).*$" > 
+  <IfModule mod_headers.c> 
+    FileETag Ninguno
+     Encabezado sin configurar ETag
+     Encabezado sin configurar Pragma
+     Header sin configurar Cache-Control
+     Cabecera no configurada Última modificación
+     Cabecera establecida Pragma "sin caché" 
+    Cabecera establecida Cache-Control "max-age=0, no-cache, no-store, must-revalidate" 
+    Cabecera establecida Caduca "Lunes, 1 de enero de 1900 a las 00:00: 00 GMT" 
+  </IfModule>
+
+</FilesMatch>
+
+# Eliminar la firma del servidor 
+ServerSignature  Off

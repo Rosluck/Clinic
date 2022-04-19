@@ -1,0 +1,67 @@
+<div class="container ">
+
+<div style="width:50%;margin:auto" class="">
+    <div ><h1 >Agregar Nuevo Paciente</h1></div>
+<form [formGroup] = "AddForm"  novalidate class="form form-group row mb-3 " >
+    <div class="row"> 
+    <div class="col-md-6">Rut</div>
+    <br>
+    <div class="col-md-6"><input type="text" name="rut" formControlName="rut"  placeholder="12345678-9" aria-label="12345678-9" class="form-control" /></div>
+    <br>
+    </div>
+    <div class="row"> 
+    <div class="col-md-6">Nombre Paciente</div>
+    <br>
+
+    <div class="col-md-6"><input type="text" name="N_pacientes" formControlName="N_pacientes" class="form-control"/></div>
+    <br>
+    </div>
+    <div class="row"> 
+    <div class="col-md-6">Cliente</div>
+    <br>
+   <div class="col-md-6" >
+        <select class="form-control form-select form-select-s" aria-label=".form-select-sm example"  formControlName="E_mandante" name="E_mandante">
+        <option value="BECHTEL QB2">BECHTEL QB2</option>
+        <option value="FACH">FACH</option>
+        <option value="KOMATSU">KOMATSU</option>
+        <option value="68-COVID">68-COVID</option>
+        <option value="BHP PAMPA NORTE">BHP PAMPA NORTE</option>
+        <option value="BHP ESCONDIDA">BHP ESCONDIDA</option>
+          <option value="BHP CENTRAL">BHP CENTRAL</option>
+        <option value="ADUANA CHILE">ADUANA CHILE</option>
+        <option value="PYME COVID">PYME COVID</option>
+        <option value="BECHTEL QB1">BECHTEL QB1</option>
+        <option value="MAHO">MAHO</option>
+        <option value="EBCO">EBCO</option>
+        <option value="CONVENIO EMPRESA">CONVENIO EMPRESA</option>
+        </select>
+    </div>
+    <br>
+    </div>
+
+    <div class="row"> 
+    <div class="col-md-6">Convenio</div>
+    <br>
+    <div class="col-md-6"><input type="text" name="E_convenio" formControlName="E_convenio" class="form-control"/></div>
+    <br>
+    </div>
+    <div class="row"> 
+    <div class="col-md-6">Fecha de ingreso</div>
+    <br>
+    <div class="col-md-6"><input type="date"  name="f_ingreso" formControlName="f_ingreso"  class="form-control" /></div>
+    <br>
+    </div>
+    <div class="row"> 
+    <div class="col-md-6">Consentimiento</div>
+    <br>
+    <div class="col-md-6"><input type="text" name="consentimiento" formControlName="consentimiento" class="form-control"/></div>
+    </div>
+    <div class="row"> 
+    <div class="col-md-12" ></div>
+    <button type="button" class="btn btn-success" (click)="onSubmit()" class="form-control" > INGRESAR </button>
+    </div>
+</form>
+
+</div>
+  
+</div>
