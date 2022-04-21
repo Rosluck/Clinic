@@ -1,0 +1,77 @@
+<div class="container">
+
+    <div style="width:50%;margin:auto">
+        <div ><h1 >Editar Paciente</h1></div>
+    <form [formGroup] = "AddForm"  novalidate class="form" class="form-group row">
+      
+           
+           <input type="hidden" name="id" formControlName="id"    class="form-control" />
+
+        <div class="row"> 
+        <div class="col-md-6">Rut</div>
+        <br>
+        <div class="col-md-6"><input type="text" name="rut" formControlName="rut"  placeholder="12345678-9" aria-label="12345678-9" class="form-control" /></div>
+        <br>
+        </div>
+        <div class="row"> 
+        <div class="col-md-6">Nombre Paciente</div>
+        <br>
+    
+        <div class="col-md-6"><input type="text" name="N_pacientes" formControlName="N_pacientes" class="form-control"/></div>
+        <br>
+        </div>
+        <div class="row"> 
+        <div class="col-md-6">Cliente</div>
+        <br>
+       <div class="col-md-6" >
+            <select class="form-control form-select form-select-s" aria-label=".form-select-sm example"  formControlName="E_mandante" name="E_mandante">
+            <option value="BECHTELQB2">BECHTELQB2</option>
+            <option value="FACH">FACH</option>
+            <option value="KOMATSU">KOMATSU</option>
+            <option value="68-COVID">68-COVID</option>
+            <option value="BHP PAMPA NORTE">BHP PAMPA NORTE</option>
+            <option value="ADUANA CHILE">ADUANA CHILE</option>
+            <option value="PYME COVID">PYME COVID</option>
+            <option value="BECHTEL QB1">BECHTEL QB1</option>
+            <option value="MAHO">MAHO</option>
+            <option value="EBCO">EBCO</option>
+            </select>
+        </div>
+        <br>
+        </div>
+    
+        <div class="row"> 
+        <div class="col-md-6">Convenio</div>
+        <br>
+        <div class="col-md-6"><input type="text" name="E_convenio" formControlName="E_convenio" class="form-control"/></div>
+        <br>
+        </div>
+        <div class="row"> 
+        <div class="col-md-6">Fecha de ingreso</div>
+        <br>
+        <div class="col-md-6"><input type="date"  name="f_ingreso" formControlName="f_ingreso"  class="form-control" /></div>
+        <br>
+        </div>
+        <div class="row"> 
+        <div class="col-md-6">Consentimiento</div>
+        <br>
+        <div class="col-md-6"><input type="text" name="consentimiento" formControlName="consentimiento" class="form-control"/></div>
+        </div>
+        <div class="row"> 
+            <div class="col-md-6">Fecha de asistencia</div>
+            <br>
+            <div class="col-md-6"><input type="date"  name="f_recepcion" formControlName="f_recepcion"  class="form-control" /></div>
+            <br>
+            </div>
+        <div class="row"> 
+        <div class="col-md-12" ></div>
+        <button type="button" class="btn btn-success" (click)="onEdit()" class="form-control" > Actualizar </button>
+        </div>
+        <div class="row"> 
+            <div class="col-md-12" ></div>
+            <button type="button" class="btn btn-success" (click)="onsend()" class="form-control" > Asistencia </button>
+            </div>
+    </form>
+    </div>
+    </div>
+    

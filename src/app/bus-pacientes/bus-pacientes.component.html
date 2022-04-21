@@ -1,0 +1,30 @@
+
+    
+    <table  class="table table-success table-striped  table-bordered "> 
+        <thead class="" >
+        
+            <th scope="row">Rut</th>
+            <th scope="row">Nombre </th>
+            <th scope="row">Mandante</th>
+            <th scope="row">Convenio</th>
+            <th scope="row">Ingreso</th>
+            <th scope="row">Consentimiento</th>
+            <th scope="row">Fecha de ingreso</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let hitoria of pacientes" align="text-align-center">
+             
+                <td>{{hitoria.rut}}</td>
+             
+                <td>{{hitoria.N_pacientes}}</td>
+                <td>{{hitoria.E_mandante}}</td>
+                <td>{{hitoria.E_convenio}}</td>
+                <td>{{hitoria.f_ingreso}}</td>
+                <td>{{hitoria.consentimiento}}</td>
+                <td>{{hitoria.f_recepcion}}</td>
+            </tr>
+    
+        </tbody>
+    
+    </table>    
+  
