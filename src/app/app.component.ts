@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PacientesService } from './pacientes.service';
+
 
 @Component({
   selector: 'app-root',

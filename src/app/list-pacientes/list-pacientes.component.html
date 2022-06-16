@@ -11,10 +11,13 @@
         <th>Convenio</th>
         <th>Ingreso</th>
         <th>Consentimiento</th>
-        <th >Accion</th>
+     <!--   <th >Accion</th> -->
     </thead>
+
+
+    
     <tbody>
-        <tr *ngFor="let paciente of pacientes | filter: filterPost" align="text-align-center">
+        <tr *ngFor="let paciente of pacientes | filter: filterPost | paginate: { itemsPerPage: 20, currentPage: pages }" align="text-align-center">
          
             <td>{{paciente.rut}}</td>
          
@@ -23,15 +26,16 @@
             <td>{{paciente.E_convenio}}</td>
             <td>{{paciente.f_ingreso}}</td>
             <td>{{paciente.consentimiento}}</td>
-            <td><a href="edit/{{paciente.id}}" class="btn btn-success" >Registro</a> </td>
+         <!--  <td><a href="edit/{{paciente.id}}" class="btn btn-success" >Registro</a> </td>-->
             <!--
             | <button (click)="deletePaciente(paciente)" class="btn btn-info" >QUITAR</button>
         -->
         </tr>
 
     </tbody>
-
 </table>  
+
+<pagination-controls (pageChange)="pages = $event"></pagination-controls>
 
 
 </div>

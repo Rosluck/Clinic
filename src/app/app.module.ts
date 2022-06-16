@@ -14,7 +14,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { FilterPipe } from './pipes/filter.pipe';  
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     EditPacientesComponent,
     BusPacientesComponent,
     FilterPipe,
-
+   
   ],
   imports: [
     BrowserModule,
@@ -34,8 +35,11 @@ import { FilterPipe } from './pipes/filter.pipe';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+   NgxPaginationModule,
+   CommonModule
   ],
+  exports:[NgxPaginationModule,CommonModule ],
   providers: [
     
   ],
